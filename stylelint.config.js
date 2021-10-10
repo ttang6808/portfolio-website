@@ -26,12 +26,13 @@ module.exports = {
     "shorthand-property-no-redundant-values": true,
     "string-no-newline": true,
     "unit-no-unknown": true,
-    "at-rule-empty-line-before": [ "always", {
+    "at-rule-empty-line-before": [ "never", {
       except: [
         "blockless-after-same-name-blockless",
         "first-nested",
       ],
-      ignore: ["after-comment"],
+      ignore: ["after-comment"
+      "inside-block",
     } ],
     "at-rule-name-case": "lower",
     "at-rule-name-space-after": "always-single-line",
