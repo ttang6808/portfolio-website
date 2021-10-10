@@ -6,80 +6,69 @@ Secondary Color (Beige): #eddcd2;
 background-color: #faf3dd;
 */
 
-:root {
-  --primary-color: #7f4f24;
-  --secondary-color: #eddcd2;
-  --dark-grey: #2b2b2b;
-  --white: #fff;
-  --black: #000;
-  --font-reg: 400;
-  --font-bold: 700;
-  --font-size-med: 24px;
-  --sun-fill-0: #edc655;
-  --sun-fill-50: #fcffad;
-  --sun-fill-100: #f76414;
-  --full-opacity: 1;
-}
-
 * {
   box-sizing: border-box;
 }
 
 body {
   font-family: 'Raleway', sans-serif;
-  font-weight: var(--font-reg);
+  font-weight: 400;
   font-size: 18px;
   line-height: 1.6;
-  background-color: var(--white);
+  background-color: #fff;
 }
 
 h1 {
   font-size: 40px;
-  font-weight: var(--font-bold);
+  font-weight: 700;
   font-variant: all-small-caps;
 }
 
 h2 {
-  font-size: var(--font-size-med);
-  font-weight: var(--font-bold);
+  font-size: 24px;
+  font-weight: 700;
 }
 
 h3 {
   font-size: 20px;
-  font-weight: var(--font-bold);
+  font-weight: 700;
 }
 
 a {
-  color: var(--dark-grey);
+  color: #2b2b2b;
   text-decoration: none;
 }
 
 a:visited {
   /* visited link */
-  color: var(--primary-color);
+  color: #7f4f24;
 }
 
-a:hover,
+a:hover {
+  /* No underlining when hovering over a link */
+  cursor: pointer;
+  font-weight: 700;
+}
+
 a:focus {
   /* No underlining when hovering over a link */
   cursor: pointer;
-  font-weight: var(--font-bold);
+  font-weight: 700;
 }
 
 a:active {
   /* selected link */
-  color: var(--secondary-color);
+  color: #eddcd2;
 }
 
-button,
-.button {
+button {
   border: none;
   display: inline-block;
   font-family: inherit; /* takes the font from the outer container */
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
+  background-color: #7f4f24;
+  color: #eddcd2;
   text-decoration: none;
-  font-weight: var(--font-bold);
+  font-weight: 700;
   padding: 10px;
   margin: 20px;
   border-radius: 3px;
@@ -87,14 +76,53 @@ button,
   transition: 0.2s opacity;
 }
 
-button:hover,
-button:focus,
-.button:hover,
+.button {
+  border: none;
+  display: inline-block;
+  font-family: inherit; /* takes the font from the outer container */
+  background-color: #7f4f24;
+  color: #eddcd2;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 10px;
+  margin: 20px;
+  border-radius: 3px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  transition: 0.2s opacity;
+}
+
+button:hover {
+  cursor: pointer;
+  border: none;
+  color: #000;
+  font-weight: 700;
+  text-decoration: none;
+  opacity: 0.8; /* reduces the opacity of the button to 80% */
+}
+
+button:focus {
+  cursor: pointer;
+  border: none;
+  color: #000;
+  font-weight: 700;
+  text-decoration: none;
+  opacity: 0.8; /* reduces the opacity of the button to 80% */
+}
+
+.button:hover {
+  cursor: pointer;
+  border: none;
+  color: #000;
+  font-weight: 700;
+  text-decoration: none;
+  opacity: 0.8; /* reduces the opacity of the button to 80% */
+}
+
 .button:focus {
   cursor: pointer;
   border: none;
-  color: var(--black);
-  font-weight: var(--font-bold);
+  color: #000;
+  font-weight: 700;
   text-decoration: none;
   opacity: 0.8; /* reduces the opacity of the button to 80% */
 }
@@ -113,8 +141,8 @@ button:focus,
   display: inline-block;
   margin-left: 15px;
   font-variant: all-small-caps;
-  font-weight: var(--font-bold);
-  font-size: var(--font-size-med);
+  font-weight: 700;
+  font-size: 24px;
 }
 
 /* Brackets Navigation */
@@ -136,15 +164,22 @@ button:focus,
   transform: translateX(-10px);
 }
 
-.navigation-list__item:hover::before,
-.navigation-list__item:hover::after {
-  opacity: var(--full-opacity);
+.navigation-list__item:hover::before {
+  opacity: 1;
   transform: translateX(0);
 }
 
-.navigation-list__item--active::before,
+.navigation-list__item:hover::after {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.navigation-list__item--active::before {
+  opacity: 1;
+}
+
 .navigation-list__item--active::after {
-  opacity: var(--full-opacity);
+  opacity: 1;
 }
 
 .navigation-list__item--active::before {
@@ -191,7 +226,7 @@ button:focus,
   display: flex;
   flex-direction: column;
   text-align: center;
-  font-weight: var(--font-bold);
+  font-weight: 700;
   margin-bottom: 20px;
 }
 
@@ -229,15 +264,15 @@ button:focus,
 
 @keyframes color-change {
   0% {
-    fill: var(--sun-fill-0);
+    fill: #edc655;
   }
 
   50% {
-    fill: var(--sun-fill-50);
+    fill: #fcffad;
   }
 
   100% {
-    fill: var(--sun-fill-100);
+    fill: #f76414;
   }
 }
 
